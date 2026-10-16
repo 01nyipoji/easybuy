@@ -1,121 +1,138 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
+import products from './data/products'
+import ProductCard from './components/ProductCard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+    <div className="app">
+      <header className="navbar">
+        <a href="/" className="logo">
+          easybuy<span>.</span>
+        </a>
+
+        <nav className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <button className="cart-button" type="button">
+          Cart (0)
         </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
+      <main>
+        <section className="hero" id="home">
+          <div className="hero-content">
+            <p className="eyebrow">THE EYEWEAR COLLECTION</p>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+            <h1>
+              See the world
+              <br />
+              differently.
+            </h1>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+            <p className="hero-description">
+              Discover eyewear designed for everyday confidence.
+              Minimal style. Maximum expression.
+            </p>
+
+            <a href="#shop" className="shop-button">
+              Explore collection
+            </a>
+          </div>
+
+          <div className="hero-image">
+            <img
+              src="/placeholder-glasses.svg"
+              alt="Minimal illustration of eyeglasses"
+            />
+          </div>
+        </section>
+
+        <section className="products-section" id="shop">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">OUR COLLECTION</p>
+              <h2>Find your frame.</h2>
+            </div>
+
+            <p>Simple designs. Timeless appeal.</p>
+          </div>
+
+          <div className="products-grid">
+            <article className="product-card">
+              <div className="product-image">
+                <img
+                  src="/placeholder-glasses.svg"
+                  alt="Classic black eyeglasses"
+                />
+              </div>
+
+              <p className="product-category">OPTICAL FRAME</p>
+              <h3>Classic Black</h3>
+
+              <div className="product-footer">
+                <p>₦18,500</p>
+                <button type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article className="product-card">
+              <div className="product-image">
+                <img
+                  src="/placeholder-glasses.svg"
+                  alt="Transparent eyeglasses"
+                />
+              </div>
+
+              <p className="product-category">OPTICAL FRAME</p>
+              <h3>Crystal Clear</h3>
+
+              <div className="product-footer">
+                <p>₦22,000</p>
+                <button type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article className="product-card">
+              <div className="product-image">
+                <img
+                  src="/placeholder-glasses.svg"
+                  alt="Modern rectangular eyeglasses"
+                />
+              </div>
+
+              <p className="product-category">OPTICAL FRAME</p>
+              <h3>Urban Rectangle</h3>
+
+              <div className="product-footer">
+                <p>₦20,000</p>
+                <button type="button">Add to cart</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="about-section" id="about">
+          <p className="eyebrow">THE EASYBUY DIFFERENCE</p>
+          <h2>Good frames. Good style. Every day.</h2>
+          <p>
+            We believe finding your everyday eyewear should be simple.
+            Explore frames that bring comfort and personal style together.
+          </p>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <a href="/" className="logo">
+          easybuy<span>.</span>
+        </a>
+        <p>Everyday eyewear, made easy.</p>
+        <p>© {new Date().getFullYear()} EasyBuy. All rights reserved.</p>
+      </footer>
+    </div>
   )
 }
 

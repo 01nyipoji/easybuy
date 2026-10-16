@@ -1,0 +1,12 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350">
+  <rect width="500" height="350" fill="#eeeeeb"/>
+  <g fill="none" stroke="#292929" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M65 155 L110 155"/>
+    <path d="M390 155 L435 155"/>
+    <path d="M235 155 Q250 143 265 155"/>
+    <path d="M110 155 L125 130 Q132 120 148 120 L205 120 Q222 120 228 138 L235 180 Q230 205 207 210 L143 210 Q120 207 116 185 Z"/>
+    <path d="M265 155 L272 138 Q278 120 295 120 L352 120 Q368 120 375 130 L390 155 L384 185 Q380 207 357 210 L293 210 Q270 205 265 180 Z"/>
+  </g>
+  <text x="250" y="285" text-anchor="middle" fill="#777777" font-family="Arial, sans-serif" font-size="16" letter-spacing="4">EASYBUY EYEWEAR</text>
+</svg>
