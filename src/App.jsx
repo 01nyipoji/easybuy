@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import { useCart } from './context/CartContext.jsx'
 import products from './data/products.js'
 import ProductCard from './components/ProductCard.jsx'
+import Checkout from './pages/Checkout.jsx'
 import Cart from './pages/Cart.jsx'
 import './App.css'
 
@@ -21,13 +22,31 @@ function App() {
   <a href="/#about">About</a>
 </nav>
 
-<Link to="/cart" className="cart-button">
-  Cart ({cartCount})
+
+
+<Link
+  to="/cart"
+  className="cart-button"
+  aria-label={`Shopping cart with ${cartCount} items`}
+>
+  <svg
+    className="cart-icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.7"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6" />
+    <circle cx="10" cy="20" r="1" />
+    <circle cx="19" cy="20" r="1" />
+  </svg>
+
+  <span className="cart-count">{cartCount}</span>
 </Link>
 
-        <button className="cart-button" type="button">
-          Cart (0)
-        </button>
       </header>
 
       <main>
@@ -74,7 +93,7 @@ function App() {
             <p>Simple designs. Timeless appeal.</p>
           </div>
 
-         <div className="products-grid">
+       <div className="products-grid">
   {products.map((product) => (
     <ProductCard
       key={product.id}
@@ -98,7 +117,9 @@ function App() {
   />
 
   <Route path="/cart" element={<Cart />} />
+  <Route path="/checkout" element={<Checkout />} />
 </Routes>
+
       </main>
 
       <footer className="footer">

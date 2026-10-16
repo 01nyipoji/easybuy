@@ -10,14 +10,24 @@
 
 /* Navigation */
 
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
   min-height: 82px;
   padding: 0 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  background: #ffffff;
   border-bottom: 1px solid #eeeeee;
 }
+
 
 .logo {
   color: #171717;
@@ -503,3 +513,379 @@
     grid-column: 2;
   }
 }
+
+
+/* Keep the page content below the fixed navbar */
+
+.app {
+  padding-top: 82px;
+}
+
+/* Shopping bag button */
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #222222;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.cart-button:hover {
+  border-color: #b69a5c;
+  color: #a58a50;
+}
+
+.cart-icon {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.cart-count {
+  min-width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #b69a5c;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+
+/* Checkout page */
+
+.checkout-page {
+  min-height: 65vh;
+  padding: 55px 7% 80px;
+}
+
+.checkout-heading {
+  margin-bottom: 35px;
+}
+
+.checkout-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.checkout-heading h1 {
+  margin: 0 0 12px;
+  color: #171717;
+  font-size: clamp(34px, 4vw, 46px);
+  letter-spacing: -1.5px;
+}
+
+.checkout-heading > p:last-child,
+.form-description {
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.checkout-form {
+  min-width: 0;
+}
+
+.checkout-section {
+  margin-bottom: 28px;
+  padding: 25px;
+  border: 1px solid #eeeeee;
+}
+
+.checkout-section h2,
+.checkout-summary > h2 {
+  margin: 0 0 10px;
+  color: #222222;
+  font-size: 20px;
+}
+
+.form-description {
+  margin-bottom: 22px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  color: #333333;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select,
+.discount-controls input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+  background: #ffffff;
+  color: #222222;
+  font-size: 14px;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus,
+.discount-controls input:focus {
+  border-color: #a58a50;
+  outline: 1px solid #a58a50;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.discount-section {
+  margin-bottom: 20px;
+}
+
+.discount-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.discount-controls button {
+  padding: 12px 22px;
+  border: 1px solid #222222;
+  background: #222222;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.discount-controls button:hover {
+  background: #a58a50;
+  border-color: #a58a50;
+}
+
+.discount-message {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.discount-message.success {
+  color: #287548;
+}
+
+.discount-message.error {
+  color: #b42318;
+}
+
+.place-order-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: #171717;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.place-order-button:hover {
+  background: #a58a50;
+}
+
+.demo-notice {
+  margin-top: 14px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Order summary */
+
+.checkout-summary {
+  padding: 25px;
+  border: 1px solid #eeeeee;
+  background: #fafaf8;
+}
+
+.checkout-summary > h2 {
+  margin-bottom: 22px;
+}
+
+.checkout-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e9e9e5;
+}
+
+.checkout-product img {
+  width: 78px;
+  height: 78px;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #eeeeeb;
+}
+
+.checkout-product-info {
+  min-width: 0;
+}
+
+.checkout-product-info h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.checkout-product-info p {
+  margin-top: 5px;
+  color: #666666;
+  font-size: 12px;
+}
+
+.checkout-summary > .summary-row:first-of-type {
+  margin-top: 15px;
+}
+
+.discount-value {
+  color: #287548;
+}
+
+.final-total {
+  margin-top: 8px;
+  border-bottom: none;
+  color: #171717;
+  font-size: 16px;
+}
+
+.summary-note {
+  margin-top: 15px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Empty cart and confirmation */
+
+.empty-checkout,
+.order-success {
+  max-width: 650px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.empty-checkout h1,
+.order-success h1 {
+  margin-bottom: 15px;
+  color: #171717;
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.empty-checkout > p,
+.order-success > p:not(.eyebrow) {
+  margin-bottom: 25px;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: #edf5ed;
+  color: #287548;
+  font-size: 30px;
+}
+
+.order-success .eyebrow {
+  margin-bottom: 12px;
+}
+
+.success-summary {
+  margin: 30px 0;
+  padding: 25px;
+  border: 1px solid #eeeeee;
+  text-align: left;
+}
+
+.success-summary h2 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+
+.delivery-confirmation {
+  margin-top: 18px;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive checkout */
+
+@media (max-width: 850px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .checkout-summary {
+    order: -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .checkout-page {
+    padding: 40px 5% 60px;
+  }
+
+  .checkout-section,
+  .checkout-summary,
+  .success-summary {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .discount-controls {
+    flex-direction: column;
+  }
+
+  .discount-controls button {
+    min-height: 44px;
+  }
+}
+
