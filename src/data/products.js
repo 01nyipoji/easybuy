@@ -5,7 +5,7 @@ const products = [
     name: 'Classic Black',
     category: 'Optical Frame',
     price: 18500,
-    image: '/placeholder-glasses.svg',
+    image: '/black.avif',
     description: 'A timeless black frame for everyday wear.',
   },
   {
@@ -13,7 +13,7 @@ const products = [
     name: 'Crystal Clear',
     category: 'Optical Frame',
     price: 22000,
-    image: '/placeholder-glasses.svg',
+    image: '/tree.jpg',
     description: 'A clear frame with a clean, modern finish.',
   },
   {
@@ -21,7 +21,7 @@ const products = [
     name: 'Urban Rectangle',
     category: 'Optical Frame',
     price: 20000,
-    image: '/placeholder-glasses.svg',
+    image: '/white.avif',
     description: 'A contemporary rectangular frame.',
   },
 ]

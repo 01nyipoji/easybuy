@@ -77,7 +77,7 @@ function App() {
 
           <div className="hero-image">
             <img
-              src="/placeholder-glasses.svg"
+              src="/background.jpg"
               alt="Minimal illustration of eyeglasses"
             />
           </div>
