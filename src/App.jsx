@@ -1,9 +1,13 @@
 
+import { Link, Route, Routes } from 'react-router-dom'
+import { useCart } from './context/CartContext.jsx'
+import products from './data/products.js'
+import ProductCard from './components/ProductCard.jsx'
+import Cart from './pages/Cart.jsx'
 import './App.css'
-import products from './data/products'
-import ProductCard from './components/ProductCard'
 
 function App() {
+  const { addToCart, cartCount } = useCart()
   return (
     <div className="app">
       <header className="navbar">
@@ -11,11 +15,15 @@ function App() {
           easybuy<span>.</span>
         </a>
 
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#shop">Shop</a>
-          <a href="#about">About</a>
-        </nav>
+       <nav className="nav-links">
+  <Link to="/">Home</Link>
+  <Link to="/#shop">Shop</Link>
+  <a href="/#about">About</a>
+</nav>
+
+<Link to="/cart" className="cart-button">
+  Cart ({cartCount})
+</Link>
 
         <button className="cart-button" type="button">
           Cart (0)
@@ -23,7 +31,12 @@ function App() {
       </header>
 
       <main>
-        <section className="hero" id="home">
+      <Routes>
+  <Route
+    path="/"
+    element={
+      <>
+         <section className="hero" id="home">
           <div className="hero-content">
             <p className="eyebrow">THE EYEWEAR COLLECTION</p>
 
@@ -51,7 +64,7 @@ function App() {
           </div>
         </section>
 
-        <section className="products-section" id="shop">
+       <section className="products-section" id="shop">
           <div className="section-heading">
             <div>
               <p className="eyebrow">OUR COLLECTION</p>
@@ -66,15 +79,13 @@ function App() {
     <ProductCard
       key={product.id}
       product={product}
-      onAddToCart={() => {
-        alert(`${product.name} will be added to your cart soon!`)
-      }}
+      onAddToCart={addToCart}
     />
   ))}
 </div>
         </section>
 
-        <section className="about-section" id="about">
+         <section className="about-section" id="about">
           <p className="eyebrow">THE EASYBUY DIFFERENCE</p>
           <h2>Good frames. Good style. Every day.</h2>
           <p>
@@ -82,6 +93,12 @@ function App() {
             Explore frames that bring comfort and personal style together.
           </p>
         </section>
+      </>
+    }
+  />
+
+  <Route path="/cart" element={<Cart />} />
+</Routes>
       </main>
 
       <footer className="footer">
