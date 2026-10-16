@@ -61,58 +61,17 @@ function App() {
             <p>Simple designs. Timeless appeal.</p>
           </div>
 
-          <div className="products-grid">
-            <article className="product-card">
-              <div className="product-image">
-                <img
-                  src="/placeholder-glasses.svg"
-                  alt="Classic black eyeglasses"
-                />
-              </div>
-
-              <p className="product-category">OPTICAL FRAME</p>
-              <h3>Classic Black</h3>
-
-              <div className="product-footer">
-                <p>₦18,500</p>
-                <button type="button">Add to cart</button>
-              </div>
-            </article>
-
-            <article className="product-card">
-              <div className="product-image">
-                <img
-                  src="/placeholder-glasses.svg"
-                  alt="Transparent eyeglasses"
-                />
-              </div>
-
-              <p className="product-category">OPTICAL FRAME</p>
-              <h3>Crystal Clear</h3>
-
-              <div className="product-footer">
-                <p>₦22,000</p>
-                <button type="button">Add to cart</button>
-              </div>
-            </article>
-
-            <article className="product-card">
-              <div className="product-image">
-                <img
-                  src="/placeholder-glasses.svg"
-                  alt="Modern rectangular eyeglasses"
-                />
-              </div>
-
-              <p className="product-category">OPTICAL FRAME</p>
-              <h3>Urban Rectangle</h3>
-
-              <div className="product-footer">
-                <p>₦20,000</p>
-                <button type="button">Add to cart</button>
-              </div>
-            </article>
-          </div>
+         <div className="products-grid">
+  {products.map((product) => (
+    <ProductCard
+      key={product.id}
+      product={product}
+      onAddToCart={() => {
+        alert(`${product.name} will be added to your cart soon!`)
+      }}
+    />
+  ))}
+</div>
         </section>
 
         <section className="about-section" id="about">

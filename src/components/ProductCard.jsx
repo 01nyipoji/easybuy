@@ -22,7 +22,10 @@ function ProductCard({ product, onAddToCart }) {
           })}
         </p>
 
-        <button type="button" onClick={() => onAddToCart(product)}>
+        <button
+          type="button"
+          onClick={() => onAddToCart(product)}
+        >
           Add to cart
         </button>
       </div>
